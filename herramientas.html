@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>PEC 1 Desarrollo y publicación de una web. Herramientas</title>
+	<meta name="description" content="Cómo publicar una web">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="estilos.css">
+	<script src="https://kit.fontawesome.com/c5d278cb4c.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">  
+</head>
+<body>
+	<header id="subir">
+
+		<div class="contHeader">
+			<h1>Desarrollo front-end para Dummies</h1>
+			<nav>
+				<ul>
+					<li><a href="index.html">Inicio</a></li>
+					<li><a href="lenguajes.html">Lenguajes</a></li>
+					<li class="activo"><a href="herramientas.html">Herramientas</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<article class="principal">
+			<p>
+				Para todos aquellos que se enfrentan por primera vez al desafío de utilizar la Terminal de comandos y a través de ella las herramientas necesarias para el desarrollo y la posterior publicación de la web, voy a tratar de explicar a través de todos mis errores, cómo se puede conseguir ese objetivo. 
+				Todo ello hasta conseguir publicar una web en GitHub. 
+			</p>
+			<p>
+				¡Si! ¡GitHub!
+				Si tú, amable lector, estas iniciándote en el desarrollo web y tratas de aprender sobre las herramientas de front-end, posiblemente conozcas GitHub. Pero posiblemente te suene aún a una comunidad de hakers malvados compartiendo en líneas de código cifrado sus planes para dominar el mundo. 
+			</p>
+			<p>
+				Pero no se trata de eso. GitHub es una herramienta a través de la cual se pueden compartir proyectos de desarrollo de páginas web o de programación. Así, varias personas que forman el equipo de desarrollo pueden descargarse el “código fuente” y hacer modificaciones y mejoras. En definitiva, desarrollar el proyecto. Y cuando esa funcionalidad en la que están trabajando ya les funciona, lo suben a GitHub, junto con el código de origen, que ahora se ha mejorado y ha avanzado en su desarrollo. Y si algo sale mal, no pasa nada. El código principal está a salvo.
+				Ahora GitHub ya suena algo mejor. Es más amigable que la primera idea. 
+			</p>
+			<p>
+				Si estás leyendo ésto, es que he conseguido, desde cero absoluto, crear un proyecto sin conocimientos previos y llegar a hacerlo público usando las herramientas de desarrollo Front-end.
+			</p>
+			<br>
+
+			<div class="iconosCentro">
+				<div class="icono">
+					<i class="fas fa-info"></i>
+				</div>
+				<div class="iconoFlecha">
+					<a href="#subir"><i class="fas fa-arrow-circle-up"></i></a>
+				</div>
+			</div>
+
+			<p>
+				Empecemos:
+			</p>
+			<p>
+				En primer lugar, para casi todas las herramientas que se van a utilizar hay otras alternativas. He usado las que iré mencionando porque en la guía con la que trato de aprender (de la UOC) utilizan estas. Y realmente parece que son tanto eficaces como sencillas de instalar. 
+				Sencillas de instalar, ahora que lo he conseguido. Por el camino me han salido innumerables mensajes de error, y con esta guía trataré de exponer la causa para evitar que otros los cometan. 
+			</p>
+			<p>
+				Para usuarios de Apple, lo que tengan un Mac, estos dos primeros pasos no los tienen que hacer porque ya llevan instalados los programas necesarios.
+				Para los usuarios de Windows, estos son los pasos a seguir:
+			</p>
+			<p>
+				1.- Lo primero es instalar el sistema operativo Linux. Para ello hay que abrir Windows Power Shell (se puede poner el nombre en el buscador y saldrá). Pero hay que abrirlo como Administrador.
+				En Windows Power Shell escribir el siguiente comando: <br>
+				<code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</code><br>
+				Con ello empezará la instalación del subsistema Linux en nuestro ordenador. 
+			</p>
+
+			<div class="imagen">
+				<img src="img/A_Linux.jpg" alt="foto de Windows Power Shell">
+			</div>
+
+			<p>
+				Llegado a este punto es FUNDAMENTAL comprobar que en el apartado de “Características Windows: activar o desactivar características” es muy importante marcar la casilla “Plataforma de máquina virtual” que por defecto estará desactivada. Sin esto, todas las instalaciones posteriores fallarán. 
+				También se debe comprobar que está habilitada la casilla de “Subsistema de Windows para Linux”.
+			</p>
+			<div class="imagen">
+				<img src="img/B_casillas.jpg" alt="foto de Windows Power Shell">
+			</div>
+
+			<div class="iconosCentro">
+				<div class="icono">
+					<i class="fas fa-terminal"></i>
+				</div>
+				<div class="iconoFlecha">
+					<a href="#subir"><i class="fas fa-arrow-circle-up"></i></a>
+				</div>
+			</div>
+
+			<p>
+				Ahora instalamos la aplicación Ubuntu desde Windows Store (hay otras opciones como Open Suse o Debian entre otros). Pero parece que Ubuntu es el más popular. Si no se han habilitados las dos casillas que antes he comentado, la instalación dará fallos, o peor, se instalará pero funcionará mal.
+			</p>
+			<p>
+				Hay varias opciones para descargar. De entre ellas, recomiendo la más actual pero que tenga la denominación LTS. Eso significa que es una versión estable. Es decir, que no está en periodo de prueba.
+			</p>
+			<div class="imagen">
+				<img src="img/C_Ubuntu.jpg" alt="foto de Windows Power Shell">
+			</div>
+
+			<p>
+				Ahora abriremos Ubuntu. Con ello veremos la llamada Terminal de comandos. 
+			</p>
+			<p>
+				En este punto, y de forma personal sin que ello afecte al resto de procesos, recomiendo instalar Windows Terminal. Es una aplicación de Windows, así que no hay ningún problema en su instalación. Ahora podemos abrir Ubuntu desde Windows Terminal. ¿Y cual es la diferencia? La más evidente es que desde Windows Terminal puedes abrir y mantener en pantalla varias pestañas con varias aplicaciones o la Terminal de Ubuntu abierta en más de una ocasión. 
+			</p>
+			<div class="imagen">
+				<img src="img/D_WindowsTerminal.jpg" alt="foto de Windows Power Shell">
+			</div>
+			<p>
+				Pero lo mejor de usar Windows Terminal es que al iniciar Ubuntu ya nos encontraremos en la raíz del disco duro, con la ruta ya definida. Os pongo una imagen de Ubuntu abierto de forma directa y de Ubuntu abierto con Windows Terminal y se verá mejor la diferencia. 
+			</p>
+			<div class="imagen">
+				<img src="img/E_UbuntuDirecto.jpg" alt="foto de Windows Power Shell">
+			</div>
+			<p>
+				Con Ubuntu abierto de forma directa falta la ruta de los archivos “montados” de inicio: /mnt/c/users/Usuario.
+				Cada vez que iniciáramos la sesión de trabajo tendríamos que escribir la ruta completa hasta llegar a la carpeta de nuestro proyecto. 
+				Sin embargo, al abrir Ubuntu desde Windows Terminal, la ruta ya está establecida. 
+			</p>
+			<div class="imagen">
+				<img src="img/F_UbuntuWT.jpg" alt="foto de Windows Power Shell">
+			</div>
+
+			<div class="iconosCentro">
+				<div class="icono">
+					<i class="fas fa-sitemap"></i>
+				</div>
+				<div class="iconoFlecha">
+					<a href="#subir"><i class="fas fa-arrow-circle-up"></i></a>
+				</div>
+			</div>
+
+			<p>
+				Ahora instalaremos <abbr title="Node Package Manager">NPM</abbr>. ¿Qué es <abbr title="Node Package Manager">NPM</abbr>? <abbr title="Node Package Manager">NPM</abbr> es un gestor de paquetes que nos permite administrar módulos o instalar paquetes de aplicaciones o dependencias fácilmente.  
+				Primero tenemos que instalar Nodejs. A través e su web puedes elegir la forma de descargar ambos, dependiendo del sistema operativo o del acceso a la Terminal que tengas. 
+			</p>
+			<p>
+				<a href="https://github.com/nodesource/distributions/blob/master/README.md" target="_blank">Este es el enlace de las descargas para Ubuntu: </a>
+			</p>
+			<p>
+				Cómo instalarlos: <br>
+				Según verás en las instrucciones, primero instalar Nodejs:
+				Abrir la Terminal (Ubuntu) y ejecutar el siguiente código: <br>
+				<code>curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -</code><br>
+				Después ejecutar la orden: <br>
+				<code>sudo apt-get install -y nodejs</code><br>
+				Puedes instalar una versión anterior si prefieres. En el anterior enlace están las versiones disponibles. 
+			</p>
+			<p>
+				Ahora ya sólo queda instalar Parcel.
+			</p>
+			<p>
+				¿Qué es Parcel? Es un “empaquetador” de archivos. Además lleva un servidor de desarrollo que nos permite ver los avances del proyecto en tiempo real como si ya estuvieran puestos en un servidor (se verá a través de un servidor virtual que crea) Y como no necesita configuración, si se consigue instalar, ya no habrá problemas. 
+			</p>
+			<p>
+				Pero… ¿Para qué empaquetar proyectos? En muchas páginas especializadas probablemente se encuentre una definición más correcta y precisa. Y también difícil de entender.
+				Supongamos que trabajamos en un proyecto relativamente grande con varias funcionalidades, y para conseguirlas tenemos que escribir varios archivos JavaScript. Puede que al final tengamos 5, 6, o x archivos JavaScript. Gracias a Parcel tendremos un único archivo .js que contenga todos los otros archivos .js que habíamos necesitado, y ejecutará su contenido de forma eficiente por orden de preferencia o de necesidad. 
+			</p>
+
+			<p>
+				Por otro lado, Parcel analiza también nuestro código (de HTML, CSS y de JavaScript) y agrupa su contenido en “paquetes” similares, sin importar de qué tipo de archivo se trate. Esto hace que la ejecución sea más eficiente, procesándose sólo los paquetes conforme vayan siendo necesarios por el usuario. 
+			</p>
+			<p>
+				Además, a los nuevos archivos que genera Parcel (y son guardados en una carpeta de nombre "dist") se les quita los espacios en blanco y los generados por los tabuladores que usamos los humanos para encribir y entender el código. El archivo resultante es igualmente interpretado por el ordenador y tiene la ventaja de ocupar menos espacio, con lo que la carga será también más eficiente. Y otro aspecto muy importante es que Parcel comprueba los recursos que tienes en la carpeta de tu proyecto y no sube a la carpeta "dist" los que no hayan sido utilizados. De esta forma, esas fotos que guardaste en el proyecto por si usabas, o esas imágenes que en un principio estaban en tu página web pero que luego sustituíste por otras pero no borraste, no serán incluídas en la carpeta del proyecto final "empaquetado" por Parcel. 
+			</p>
+			<p>
+				Ahora supongamos que para trabajar en ese proyecto relativamente grande, varias personas tienen que colaborar en él. Parcel “empaqueta” el contenido del proyecto, lo optimiza y crea una serie de archivos que son una especie de diario o “cuaderno de Bitácora” con el historial de versiones usadas. De esta forma, cualquier persona que se una al equipo de desarrollo del proyecto y se lo descargue, el archivo que Parcel ha creado con el “diario” de actividades y versiones usadas le dirá a esta nueva persona que va a colaborar con el proyecto  qué paquetes teníamos instalados en el original, ignorando los nuevos e instalando los mismos, de forma que el desarrollo sea totalmente compatible. Así cuando volvamos a unir las distintas ramificaciones o partes hechas por cada desarrollador, el resultado será básicamente compatible. 
+			</p>
+
+			<div class="iconosCentro">
+				<div class="icono">
+					<i class="fas fa-box-open"></i>
+				</div>
+				<div class="iconoFlecha">
+					<a href="#subir"><i class="fas fa-arrow-circle-up"></i></a>
+				</div>
+			</div>
+
+			<p>
+				En el siguiente vídeo se ofrece una explicación clara de lo que hace Parcel y un tutotial.
+			</p>
+
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/YnZ883a7XP0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+			<p>
+				Ahora vamos a instalar Parcel. Para ello ejecutaremos en la Terminal el siguiente comando: <br>
+				<code>npm install -g parcel-bundler</code><br>
+				Si en el proceso de instalación salen muchos errores como los de la imagen siguiente, no pasa nada. Debes volver a intentar instalar Parcel, pero esta vez dentro de tu proyecto, es decir, dentro de la carpeta (directorio) que contiene el proyecto que vas a desarrollar. 
+			</p>
+
+			<div class="imagen">
+				<img src="img/J_ProblemParcel.jpg" alt="foto problemas al instalar Parcel">
+			</div>
+
+			<p>
+				Para ello ejecutaremos en la Terminal la siguiente orden: <br>
+				<code>npm install parcel-bundler - -save-dev</code> 
+			</p>
+			<p>
+				Luego crearemos un archivo llamado package.json dentro el directorio. Este archivo es el manifiesto del proyecto, el cuaderno de Bitácora. Tiene un resumen de todo el proyecto de forma que si otras personas obtienen una copia del mismo, todas ellas podrán tener las mismas funcionalidades. Para crear este archivo ejecutaremos la siguiente orden: <br>
+				npm init -y <br>
+				De esta forma se creará de forma automática el archivo. Si en vez de esta orden ejecutas: <br>
+				npm init <br>
+				también se creará el archivo package.josn, solo que antes a través de la terminal te irá haciendo una serie de preguntas (nombre del proyecto, autor, etc.). Y finalmente se creará también el archivo.
+			</p>
+			<p>
+				A continuación se crearán los archivos HTML y CSS de tu proyecto (index.html e index.js) El archivo index.html hay que enlazarlo con el .js mediante uno de los  “script” de la etiqueta “head” <br>
+				<code>
+					&lt;html&gt; <br>
+					&lt;body&gt; <br>
+  						&lt;script src="./index.js"&gt;&lt;/script&gt;  <br>
+					&lt;/body&gt; <br>
+					&lt;/html&gt; <br>
+				</code>
+			</p>
+			<p>
+				A través de <a href="https://parceljs.org/getting_started.html" target="_blank">éste enlace puedes acceder a la web oficial de Parcel</a> y ver el proceso de instalación. Está en español, así que es fácil de entender. 
+			</p>
+
+			<div class="iconosCentro">
+				<div class="icono">
+					<i class="fas fa-project-diagram"></i>
+				</div>
+				<div class="iconoFlecha">
+					<a href="#subir"><i class="fas fa-arrow-circle-up"></i></a>
+				</div>
+			</div>
+			<p>
+				Parcel se puede ejecutar en modo desarrollo y se generará un servidor virtual, que podremos abrir en nuestro navegador e ir viendo los cambios que hagamos al proyecto en tiempo real. Para ello ejecutaremos la orden: <br>
+				<code>npm run dev</code>
+			</p>
+			<p>
+				También podemos ejecutarlo en modo producción ejecutando la siguiente orden: <br>
+				<code>npm run build</code> <br>
+				produciéndose el “empaquetado” de los archivos y generándose una nueva carpeta con los archivos optimizados para su ejecución. Además se general el archivo package-lock.json, que como se ha comentado, contiene todo el historial de versiones de nuestro proyecto para que si se comparte, se trabaje con las mismas versiones y dependencias para garantizar su compatibilidad. 
+			</p>
+			<p>
+				Ahora instalamos la librería “rimraf”. Lo que hace es limpiar nuestra carpeta “dist” del proyecto, cada vez que compilemos nuestra aplicación. <br>
+				Para instalarla ejecutaremos la siguiente orden: <br>
+				<code>npm install --save-dev rimraf npm-run-all</code>
+			</p>
+			<p>
+				Para adaptar esta librería, tendremos que hacer los siguientes cambios en nuestro archivo package.json, añadiendo dentro de los “scipts” lo siguiente: <br>
+				<code>
+					"parcel:dev": "parcel index.html", <br>
+					"parcel:build": "parcel build index.html", <br>
+					"clean": "rimraf dist .cache .cache-loader"
+				</code>
+			</p>
+			<p>
+				Y los anteriores contenidos de “dev” y “build” hay que sustituirlos por los siguientes: <br>
+				<code>
+					"dev": "npm-run-all clean parcel:dev", <br>
+					"build": "npm-run-all clean parcel:build",
+				</code> 
+			</p>
+
+			
+		</article>
+
+		<article class="principal">
+			<p>
+				Ahora ya sólo falta publicar el proyecto usando GitHub. <br>
+				En el suguiente vídeo se puede ver una explicación muy clara y amena de los que es Git y GitHub y conceptos muy usados como compilar, repositorio, etc.
+			</p>
+
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/jGehuhFhtnE" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+			<p>
+				Para subir el proyecto a GitHub, el primer paso es darse de alta (es un recurso gratuito). 
+			</p>
+			<p>
+				Ultimar este proceso no parece especialmente difícil, pero una ayuda visual siempre es un buen recurso para recordar los pasos y ver lo que hacen. En el siguiene vídeo se explica el proceso. Se hace desde Git, que parece que es un programa que crea el entorno visual de trabajo. Pero no es necesario intalarlo. Con la Terminal que ya tenemos será suficiente. Cuando en el vídeo se habla de Git o de Git Bash, tal y como hemos hecho el desarrollo hasta aquí, sustituiremos esas herramientas por la Terminal (Windows-terminal – Ubuntu).
+			</p>
+
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/RRegIKu-z3k" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+			<p>
+				Muchas gracias por la atención prestada. 
+			</p>
+
+			<p>¡Ah! Y si en el siguiente recuadro se ve además un mensaje es que, no sólo he conseguido hacer y publicar esta web usando los recursos aquí expuestos, sino que además todo funciona bien y mi archivo de JavaScript está correctamente enlazado y operativo. </p>
+
+			<div id="text">
+				
+			</div>
+
+
+		</article>
+
+	</main>
+
+	<footer>
+		<div class="autor">
+			<p>© 2020 - Víctor Av. Trabajo realizado para la asignatura Herramientas <abbr title="HyperText Markup Language" lang="en">HTML</abbr> y <abbr title="Cascading Style Sheets" lang="en">CSS.</abbr> Segundo semestre del curso 2019-2020</p>
+		</div>
+
+		<div class="fuentes">
+			<p>El guión que se ha seguido para la instalación de los programas y para la redacción del cuerpo de esta página se ha basado de unos apuntes de la <abbr title="Universitat Oberta de Catalunya">UOC</abbr></p>
+		</div>
+	</footer>
+
+	
+	
+
+	<script src="./index.js"></script>
+</body>
+</html>
