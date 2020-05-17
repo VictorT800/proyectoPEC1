@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Animaciones, fotografías y clip-path en la web">
+	<title>Web y recursos multimedia</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/estilos2.5decf905.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<header id="subir">
+		<div class="contHeader">
+			<div class="unoIzq">
+				<img src="/logoD.6fe1ad83.svg" alt="Logo">
+			</div>
+
+			<div class="titulo"><h1>Desarrollo front-end para Dummies</h1></div>
+			
+			<div class="unoDcha">
+				<p class="parteDDos">Parte II</p>
+			</div>
+
+			<div class="menu">
+				<nav>
+					<ul>
+						<li class="animaLi"><a href="/index2.html">Inicio</a></li>
+						<li class="animaLi"><a href="/imagenes.html">Imágenes</a></li>
+						<li class="animaLi"><a href="/animaciones.html"><span class="activo">Animaciones</span></a></li>
+					</ul>
+				</nav>
+			</div>
+	
+		</div>
+		
+	</header>
+
+	<main>
+		<section class="ppal">
+			<h2>Animaciones y Clip-Path</h2>
+			<p>En esta sección se va a hacer una pequeña introducción a las transiciones, su diferencia con las animaciones y también se hablará del reciente concepto de clip-path.</p>		
+		</section>
+
+		<article class="ppal">
+			<div class="titulillo">
+				<p>Transiciones</p>
+			</div>
+			<p>El concepto de transiciones es ya más clásico. Desde un punto de vista muy elemental, se puede decir que son los pequeños cambios estéticos que sufre un elemento de nuestro diseño pero sin modificar su estructura. Un ejemplo conocido de transiciones es el efecto <em>hover</em>, que hace que el elemento cambie al pasar el ratón por encima cambiando de color, apareciendo un subrayado, aumentando el tamaño de la letra de su interior...</p>
+			<p>Las transiciones generan una sensación de movilidad, pero en el fondo son estáticas.</p>
+
+			<div class="transicion">Transición</div>
+
+			<p>La transición de arriba es lo que se podría ver al pasar el ratón por encima con el efecto <em>hover</em>, por ejemplo (se ha aplicado de forma continua y no al pasar el ratón a efectos de muestra).</p>
+		</article>
+			
+		<article class="ppal">
+			<div class="titulillo">
+				<p>Animaciones</p>
+			</div>
+			<p>A diferencia de las transiciones, con las animaciones se consigue un efecto realmente dinámico, ya que no sólo cambian ciertas propiedades del elemento, sino que puede cambiar la propia estructura de éste, con lo que se consigue un mayor efecto de dinamismo.</p>
+
+			<div class="animacion">Animación</div>
+
+			<p>Como se puede ver, con la animación se consigue un efecto de mayor dinamismo.</p>
+			<p>Establecer una animación es relativamente sencillo. Más que conocimientos técnicos propiamente requiere de imaginación para crear efectos vistosos.</p>
+			<p>Las animaciones hay que verlas como los fotogramas de una película de animación. En cada fotograma se crea un diseño de tal forma que al proyectar la secuencia completa con todos los fotogramas unidos, se genera esa sensación de continuidad y animación.</p>
+			<p>La forma de declarar una animación es mediante la propiedad <code>animation</code> dentro del selector de <abbr title="Cascading Style Sheets" lang="en">CSS</abbr> que queramos animar. Entre las propiedades principales que le podemos dar están la duración, el nombre con el que queremos identificar la animación, y las repeticiones que le queremos dar.</p>
+			<p>Posteriormente, mediante la propiedad <code>@keyframes</code> estableceremos los fotogramas de nuestra animación, indicándole mediante un porcentaje las partes en las que queremos "insertar" uno de nuestros fotogramas.</p>
+			<p>Para que se vea con un ejemplo, el código empleado en la animación superior en nuestro archivo de "estilos" ha sido el siguiente:</p>
+			<code>
+				<strong>.animacion</strong>{ <br>
+				animation: 2.5s animacion infinite; <br>
+				} <br>
+				<br>
+				<strong>@keyframes animacion</strong>{ <br>
+				30%{ <br>
+				border-radius: 30px; <br>
+				transform: scaleX(1.55) scaleY(0.75); <br>
+				} <br>
+				50%{ <br>
+					background: tomato; <br>
+					border-radius: 40px; <br>
+					transform: scaleX(0.75) scaleY(1.55); <br>
+				} <br>
+				60%{ <br>
+					border-radius: 30px; <br>
+					transform: scaleX(1.55) scaleY(0.85); <br>
+					} <br>
+				}
+			</code>
+			<p>Como se puede ver, se han insertado sólo tres fotogramas: al 30% de la película, al 50% y al 60%. Por supuesto, se pueden insertar más fotogramas y a su vez dentro de cada fotograma se pueden establecer varios cambios para hacer una animación más elaborada.</p>
+		</article>
+
+		<article class="ppal">
+			<div class="titulillo">
+				<p>Clip-Path</p>
+			</div>
+
+			<p>De forma muy elemental, podemos definir el clip-path como un recorte. Al menos eso es lo que parece verse en pantalla. Pero no es exactamente así.</p>
+			<p>En realidad el fondo (la imagen, la foto etc) no se recorta y permanece el nuevo diseño. Lo que se crea en realidad es lo que en diseño se conoce como una <em>máscara</em>. La imagen de detrás no desaparece, sino que queda enmascarada por nuestro diseño clip-path</p>
+			<p>De esta forma, si hacemos por ejemplo un efecto <code>hover</code> sobre nuestro diseño clip-path, al pasar el ratón por encima la máscara irá desapareciendo (en caso de que sea esa la animación elegida) y se mostrará la imagen que había de fondo completamente.</p>
+			<p>A pié de página se puede ver una animación hecha con clip-path. En lugar de establecer un fondo de color, la secuencia de formas geométricas que forman los fotogramas se podía haber hecho sobre una fotografía. El resultado puede ser una forma en movimiento como esta, pero también se puede ser un simple recorte. En este caso en concreto se ha hecho sobre un dondo de color variable para que se pueda observar mejor el significado del clip-path.</p>
+		</article>
+
+		
+
+		<article class="ppal">
+			<div class="autoria">
+				<div class="aFoto"><a href="/index2.html"><img src="/flechaNaranja.853d100d.svg" alt=""></a><p>Volver a Inicio</p></div>
+				<div class="aArriba"><a href="#"><img src="/flechaVerde.17725521.svg" alt=""></a><p>Subir</p></div>
+			</div>
+		</article>
+
+		<footer>
+			<div class="conFooter">
+				<div class="area1"><img src="/logoD.6fe1ad83.svg" alt="Logo"></div>
+				<div class="area2"><p><span class="cmH1">Desarrollo Front-end para Dummies </span> - <span class="cmH2"> Parte II</span></p><br><p>Póximamente la Parte III</p></div>
+				<div class="area3"></div>
+				<div class="area4"><p>&#169; Víctor Avila. Trabajo para la asignatura "Herramientas <abbr title="HyperText Markup Language" lang="en">HTML</abbr> y <abbr title="Cascading Style Sheets" lang="en">CSS.</abbr> I" del Máster <em><a class="enlaceBlanco" href="https://estudios.uoc.edu/es/masters-universitarios/desarrollo-sitios-aplicaciones-web/presentacion" target="_blank">Desarrollo de sitios y aplicaciones web</a></em> de la <abbr title="Universidad Oberta de Catalunya">UOC</abbr></p></div>
+				
+			</div>
+		</footer>
+	</main>
+	
+</body>
+</html>

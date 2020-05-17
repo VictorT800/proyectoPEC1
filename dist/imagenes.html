@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Animaciones, fotografías y clip-path en la web">
+	<title>Web y recursos multimedia</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/estilos2.5decf905.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<header id="subir">
+		<div class="contHeader">
+			<div class="unoIzq">
+				<img src="/logoD.6fe1ad83.svg" alt="Logo">
+			</div>
+
+			<div class="titulo"><h1>Desarrollo front-end para Dummies</h1></div>
+			
+			<div class="unoDcha">
+				<p class="parteDDos">Parte II</p>
+			</div>
+
+			<div class="menu">
+				<nav>
+					<ul>
+						<li class="animaLi"><a href="/index2.html">Inicio</a></li>
+						<li class="animaLi"><a href="/imagenes.html"><span class="activo">Imágenes</span></a></li>
+						<li class="animaLi"><a href="/animaciones.html">Animaciones</a></li>
+					</ul>
+				</nav>
+			</div>
+	
+		</div>
+		
+	</header>
+
+	<main>
+		<section class="ppal">
+			<h2>Imágenes “responsive” en una web también adaptable.</h2>
+			<p>En este apartado se va a tratar algo de las nuevas formas que hay para declarar los formatos de imágenes en la web, para optimizar su uso y poder seleccionar el tamaño adecuado en función de la necesidad del dispositivo en el que se vea la página.</p>
+
+			<p>Pero primero, como requisito obligatorio al tratarse de una web de desarrollo front-end, voy a hacer una pequeña declaración de los nuevos estándares de organización, posicionamiento y diseño de la estructura de la página: FLEXBOX y GRID.</p>
+
+			<div class="titulillo">
+				<p>Una breve introducción</p>
+			</div>
+
+			<div class="ppal">
+				<figure>
+					<img src="/fachada840.f7f837fd.jpg" alt="Foto de ventanas en fachada edificio similar a un diseño de rejilla" srcset="/fachada480.cf660ac5.jpg 480w,/gridFachada_780.f1803a60.jpg 780w,/fachada840.f7f837fd.jpg 840w" sizes="(max-width: 480px) 100vw, (max-width: 830px) 100vw, 840px">
+					<figcaption>Diseño de fachada similar a concepto diseño GRID</figcaption>
+				</figure>
+			</div>
+			
+		</section>
+
+		<article class="ppal">
+			<div class="imgFlex">
+				<div class="a">
+					<h4>HTML</h4>
+				</div>
+				<div class="b">
+					<p>Como se ha expuesto en la página principal, hace no mucho tiempo las tabletas y los smartphones no existían. Las páginas web se diseñaban prácticamente para un único tamaño de dispositivo y el contenido había que llenarlo de información.</p>
+					<p>La falta de métodos de posicionamiento exacto hizo que el diseño de estas antiguas páginas web estuviera basado en tablas. En las capturas de pantalla de la página de inicio se puede observar esa tendencia. Era una forma sencilla de posicionar el contenio de forma uniforme.</p>
+					<p>Con el avance de los estándares de <abbr title="HyperText Markup Language" lang="en">HTML</abbr> y <abbr title="Cascading Style Sheets" lang="en">CSS</abbr> el uso de las tablas empezó a verse relegado a su utilización natural, como son los formularios de contacto o las muestras de resultados de páginas deportivas, que casi de forma unánime se basan en tablas. Eso está bien, pero la utilización de esta etiqueta de <abbr title="HyperText Markup Language" lang="en">HTML</abbr> como forma de planificar la estructura de la web completa está totalmente desaconsejada, ya que los principales buscadores penalizan su uso.</p>
+					<p>Además, la aparición de nuevas formas de posicionamiento y diseño de cajas, como son FLEXBOX y GRID hace que ya no sea necesario, ya que además estos son más versátiles y fáciles de usar.</p>
+					<p>Esta caja está diseñada con FLEXBOX y el contenedor de fotos que hay más abajo está diseñado con GRID. En el siguiente apartado se hará un breve resumen de su forma de configuración.</p>
+				</div>
+			</div>
+			<div class="imgFlex">
+				<div class="a">
+					<h4>CSS</h4>
+				</div>
+				<div class="b">
+					<p>La configuración de <strong>FLEXBOX</strong> es más fácil de entender. Básicamente consiste en declarar un contenedor con la propiedad "display: flex" y su contenido y todos sus hijos son ya flexibles. Lo primero que hay que tener en cuenta es que el flujo normal del diseño es en vertical. Sin embargo, al declarar un contenedor "flex" su fluir natural pasa a ser horizontal. Para cambiarlo a vertical hay que modificarlo con la propiedad "flex-direction" y sus valores de "row" (por defecto) o "column" que hace que establezca como eje predeterminado el vertical.</p>
+					<p>El contenido se alinea mediante la propiedad "justify-content" y sus valores "flex-start,  flex-end, center, space-around y space-between". Y a su vez, los items contenidos en ellos se alinean de forma sencilla con la propiedad "align-items" y sus valores "stretch, baseline, center, flex-start y flex-end".</p>
+					<p>Existen muchas más posibilidades de configuración, esto es sólo un plantemianto inicial.</p>
+					<p>Respecto a <strong>GRID</strong> me resulta más difícil entender, pero creo que es más versátil incluso que FLEXBOX. El potencial de GRID es muy grande ya que se puede diseñar con este sistema la estructura completa de una web y con sólo un par de órdenes hacerla completamente "responsive".</p>
+					<p>La configuración inicial de GRID es sencilla. Se declaran las filas y columnas que se quiere, o sólo se declaran las columnas y las filas se van rellenando de forma automática conforme se pone contenido.</p>
+					<p>Por ejemplo, un diseño clásico para poner  seis fotos en horizontal, sería <em>grid-template-columns:  1fr 1fr 1fr 1fr 1fr 1fr</em>. Así se han declarado seis columnas de igual tamaño (fr=fracción). Como todas las columnas son iguales, también se puede usar la fórmula reducida: <em>grid-template-columns: (repeat(6, 1fr)</em>, es decir, seis columnas de igual tamaño.</p>
+					<p>En caso de querer declarar también filas, el procedimiento es el mismo pero con la propiedad <em>grid-template-rows</em>.</p>
+				</div>
+			</div>
+		</article>
+
+		<article class="ppal">
+			<p>El siguiente montaje de fotos está hecho con un diseño GRID de 4 columnas para ordenador, que pasará a 2 en tableta y a 1 en móvil. Así, de esta forma tan sencilla de puede hacer una galería fotográfica totalmente adaptable.</p>
+			<p>Respecto a las fotos usadas, sólo se van a autilizar dos tamaños, ya que la vesión tableta y móvil van a usar la misma (en versión 2 columnas y en 1 columna) y la versión ordenador sí va a ser más pequeña (de la mitad de tamaño).</p>
+			<p>En la carpeta de "imágenes" se va a guardar una foto de cada en un tamaño que servirá además para poder hacer la ampliación cuando se quiera ver en detalle en la sección de <em>reconocimientos</em> que tiene un <strong>enlace al final de esta página</strong>, donde estarán todos los recursos fotográficos usados, su fuente y autoría.</p>
+
+			<div class="fotoGrid">
+				<div>
+					<figure>
+						<img src="/atlantis480.c7bd1b33.jpg" alt="Transbordador Atlantis" srcset="/atlantis480.c7bd1b33.jpg 480w,/atlantis214.9fb87bd2.jpg 214w" sizes="(max-width: 480px) 100vw, (max-width: 830px) 50vw, 214px">
+					</figure>
+				</div>
+				<div>
+					<figure>
+						<img src="/canal480.f44dccc6.jpg" alt="Canal de Venecia" srcset="/canal480.f44dccc6.jpg 480w,/canal214.ae99643e.jpg 214w" sizes="(max-width: 480px) 100vw, (max-width: 830px) 50vw, 214px">
+					</figure>
+				</div>
+				<div>
+					<figure>
+						<img src="/corazon480.6003cfe3.jpg" alt="Imagen de manos señalando un corazón" srcset="/corazon480.6003cfe3.jpg 480w,/corazon214.9b8ef4d2.jpg 214w" sizes="(max-width: 480px) 100vw, (max-width: 830px) 50vw, 214px">
+					</figure>
+				</div>
+				<div>
+					<figure>
+						<img src="/cupula480.52e4ef41.jpg" alt="Cúpula de San Pedro desde lejos" srcset="/cupula480.52e4ef41.jpg 480w,/cupula214.d7274c03.jpg 214w" sizes="(max-width: 480px) 100vw, (max-width: 830px) 50vw, 214px">
+					</figure>
+				</div>
+				<div>
+					<figure>
+						<img src="/egipto480.c57702ac.jpg" alt="Pirámides de Egipto" srcset="/egipto480.c57702ac.jpg 480w,/egipto214.f9c6a6f3.jpg 214w" sizes="(max-width: 480px) 100vw, (max-width: 830px) 50vw, 214px">
+					</figure>
+				</div>
+				<div>
+					<figure>
+						<img src="/miami480.6e5fefeb.jpg" alt="Ciudad de Miami" srcset="/miami480.6e5fefeb.jpg 480w,/miami214.2007a843.jpg 214w" sizes="(max-width: 480px) 100vw, (max-width: 830px) 50vw, 214px">
+					</figure>
+				</div>
+				<div>
+					<figure>
+						<img src="/matrix480.bddbe67b.jpg" alt="Lluvia de letras estilo película Matrix" srcset="/matrix480.bddbe67b.jpg 480w,/matrix214.ab6c68f0.jpg 214w" sizes="(max-width: 480px) 100vw, (max-width: 830px) 50vw, 214px">
+					</figure>
+				</div>
+				<div>
+					<figure>
+						<img src="/placa480.bf037e0b.jpg" alt="Placa madre" srcset="/placa480.bf037e0b.jpg 480w,/placa214.ef7eda80.jpg 214w" sizes="(max-width: 480px) 100vw, (max-width: 830px) 50vw, 214px">
+					</figure>
+				</div>
+			</div>
+		</article>
+
+		<article class="ppal">
+			<div class="titulillo">
+				<p>Imágenes responsivas</p>
+			</div>
+			<p>En el montaje superior de fotografías se ha programado para que el buscador elija entre dos opciones. Como en la versión ordenador se muestran 4 fotos, el tamaño elegido ha sido de 214 px de ancho. Sin embargo, en tabletas y móviles se va a usar un tamaño de 480 px ya que la imágen va a ocupar o bien dos columnas o todo el ancho del dispositivo.</p>
+			<p>El código usado ha sido el siguiente:</p>
+				<code>&#60;figure&#62;<br>
+					&#60;img src="img/egipto480.jpg" alt="Pirámides de Egipto"<br>
+					srcset="img/egipto480.jpg 480w, img/egipto214.jpg 214w"<br>
+					sizes="(max-width: 480px) 100vw, (max-width: 830px) 50vw, 214px"&#62;<br>
+					&#60;/figure&#62;
+				</code>
+
+			<p>La primera idea de una imagen adaptable es la que va aumentando o reduciendo su tamaño para adaptarse de forma automática a la escala del dispositivo de salida (el que visiona el usuario).</p>
+
+			<p>Con los demás elementos de la web pasa algo similar. Los títulos y los párrafos, por ejemplo, se reducen de forma automática y van empleando más o menos líneas en función de la pantalla de visionado. Sin embargo, es algo normal que para pantallas más grandes usemos tamaño de letra grande, y que establezcamos que para dispositivos más pequeños la letra se reduzca. 
+			En realidad, si no lo hiciéramos, no pasaría nada. Los párrafos se seguirían viendo, pero estaríamos perdiendo un espacio de forma absurda.</p>
+
+			<p>Con las imágenes pasa algo parecido.</p>
+
+			<p>La imagen de la fachada de la cabecera tiene 1920 px de ancho y un tamaño de 626 KB en su formato original. Sin embargo, dado que el ancho máximo diseñado para esta web en su formato ordenador es de 850 px, una de la fotos generadas tiene precisamente un ancho de 840 px que tiene ya un tamaño de archivo de sólo 147 KB. ¿Por qué cargar 626 Kb y reescalar la foto si sólo voy a necesitar como mucho 147?</p>
+
+			<p>La forma de solucionarlo en este caso, es hacer tres tamaños de las fotografías. La original en grande para la portada del ordenador, las mismas fotos reducidas de tamaño para el ancho que calculo que necesitaré para la tableta (calculo un máximo de 400px ya que el primer corte de @media-queries se va a hacer a 830px) y finalmente otro tamaño para la versión de móvil para el que, curiosamente se va a establecer un tamaño ligeramente superior, ya que las imágenes irán de nuevo en columna de una en una.  El corte para dispositivo móvil se piensa hacer a los 480 px, lo que significa que la foto de 400 px quedará pequeña, y por lo tanto pasaría a la grande reescalándola en pequeño. Por ese motivo se va a añadir a la carpeta de “imágenes” un tercer tamaño de estas fotos de 480 px (puede que en el diseño final deje algún píxel a los márgenes), pero como aún no es seguro y en cualquier caso hablamos de 2 a 4 píxeles por lado, la diferencia de tamaño de archivo no compensa el riesgo.</p>
+
+			<p>En principio podemos poner una imagen para pantalla de ordenador que la ocupe por entero, como las que se han puesto en la página de portada de ésta web. Sin embargo, en formato tableta en vez de poner las imágenes una debajo de otra, se van a agrupar en filas de dos. Por lo tanto, de entrada ya sé que el tamaño que necesito para la tableta es casi la mitad que para el monitor de ordenador. Obligar en ese caso a que la tableta cargue la foto grande para luego escalarla a la mitad de tamaño es una pérdida de los recursos de memoria, tanto del dispositivo como de la velocidad del navegador. Y con el móvil, pasaría algo parecido.</p>
+
+			<p>En este caso, se han establecido tres puntos de ruptura de la imagen. Como las fotos que se insertan son en formato JPG y su resolución no es mucha, con solo estos tres cortes es suficiente.</p>
+
+			<p>El código usado ha sido el siguiente:</p>
+			<code>
+				&#60;figure&#62;<br>
+				&#60;img src="img/terra.jpg" alt="Portada buscador Terra de 29 de Agosto de 2004" <br>
+				srcset="img/terra-410.jpg 410w, img/terra-480.jpg 480w, img/terra.jpg 769w" <br>
+				sizes="(max-width: 480px) 100vw, (max-width: 830px) 44vw, 769px"&#62; <br>
+				&#60;/figure&#62;
+			</code>
+
+			<p>Explicación de las indicaciones dadas al navegador mediante este código:</p>
+
+			<p>En primer lugar, como siempre, se declara la imagen principal y la ruta de entrada.</p>
+
+			<p>En segundo lugar, mediante el atributo “srcset” se declara que existen 3 imágenes: la primera con su ruta de acceso y su nombre y a continuación, se declara su tamaño de ancho width, no en píxeles; la segunda con un width de 480 px y la última por defecto, con un width de 769 px.</p>
+
+			<p>En tercer lugar, mediante el atributo “sizes” se declara cómo se van a usar las imágenes, de forma que el navegador sepa cuál cargar en memoria. Así se dice en principio que para los dispositivos pequeños (móviles) con un ancho máximo de 480 px se va a usar la foto al 100% (100vw), es decir, una por línea. A continuación, de 481 px a un máximo de 830 px (para tabletas) se dice que las fotos van a ocupar sólo el 44% del ancho de la pantalla (44vw) ya que se van a situar 2 fotos juntas en horizontal. Si no se declarara así, en un tamaño de dispositivo de 830 px cabría la foto más grande de 769 px; sin embargo, puesto que en estos dispositivos las fotos se van a situar de dos en dos, el tamaño máximo que puede tener cada una es de 415 px, por lo que cargar la foto de 769 para reescalarla luego a un tamaño inferior es perder ancho de banda.</p>
+
+			<p>En cualquier caso, las fotos de la página principal son de un formato reducido (jpg) y además, de baja resolución puesto que son a su vez capturas de pantalla. Sin embargo, en fotos de más calidad la diferencia de tamaño del archivo se nota más. Por eso en este caso, hay que tener en cuenta otro aspecto de las fotos responsivas.</p>
+
+		</article>
+
+		<article class="ppal">
+			<div class="titulillo">
+				<p>Dirección de arte</p>
+			</div>
+
+			<p>Aplicamos la llamada dirección de arte en una imagen cuando tiene un elemento principal que se ve bien en formato grande, pero al reducir su tamaño para dispositivos más pequeños, ese elemento principal se pierde entre todo el contenido de la foto al quedar tan pequeño.</p>
+			<p>La solución es recortar ese elemento principal de la imagen y hacer otra con él en la que se vea en grande, aunque ahora el tamaño de la imagen sea pequeño. Se ha eliminado el fondo y en la nueva nos centramos en el contenido que queremos resaltar.</p>
+			<p>Imaginemos que estamos haciendo un reportaje sobre astronautas. El elemento principal de la foto que se muestra a continuación no es el módulo lunar, ni el espacio, es sólo el astronauta.</p>
+			<figure>
+				<img src="/astronauta-840.19706986.jpg" alt="Astonauta en la superficie de la Luna" srcset="/astronauta480.bb5fabe0.jpg 480w,/astronauta-840.19706986.jpg 840w" sizes="(max-width: 480px) 100vw, (max-width: 830px) 100vw, 840px">
+				<figcaption>Astronauta en la superficie de la Luna</figcaption>
+			</figure>
+			<p>En la versión móvil, al empequeñecer esta foto se vería muy pequeña y el astronauta se perdería con el resto de la imagen. Por eso, lo que se hace es preparar otra foto y decirle al navegador que en dispositivos de salida con un tamaño de 480 px o menos, la foto que se muestre sea otra.</p>
+			<p>Abajo a la izquierda, la foto que se ve en la versión escritorio, y a la derecha la que se ve en versión móvil.</p>
+			<img src="/astronautamontaje.46f77433.jpg" alt="Foto original y de dirección de arte">
+		</article>
+
+		<article class="ppal">
+			<div class="titulillo">
+				<p>Formatos de imagen</p>
+			</div>
+			<p>El tema de los formatos de imagen lo voy a tratar de forma muy rápida.</p>
+			<p>Los principales formatos para imágenes son <abbr title="Joint Photographic Experts Group">JPG</abbr>, <abbr title="Portable Network Graphics">PNG</abbr>, <abbr title="Graphics Interchange Format">GIF</abbr> y <abbr title="Scalable Vector Graphics">SVG</abbr>.</p>
+			<p><abbr title="Joint Photographic Experts Group">JPG</abbr> es un formato de imagen de calidad pero bastante ligero en cuanto a tamaño del archivo, en comparación con el otro formato habitual de imagen <abbr title="Portable Network Graphics">PNG</abbr>.</p>
+			<p><abbr title="Portable Network Graphics">PNG</abbr> tiene más resolución que el anterior formato, siendo mejor para imágenes muy grandes o que se va a mostrar con una resolución muy alta y requiere que se vean los detalles, sombras contrastes de colores, etc. Otra característica importante es que este formato, a diferencia del anterior, permite el canal alfa, es decir, transparencias.</p>
+			<p><abbr title="Scalable Vector Graphics">SVG</abbr> es un formato muy interesante, ya que el tamaño de su archivo es mínimo. Se usa principalmente para el diseño de logos, iconos, etc. La gran ventaja de este formato es que es totalmente escalable hasta el infinito sin perder nada de resolución. Eso se debe a que no está formado por píxeles, sino que la imagen se establece mediante coordenadas matemáticas, que se recalculan de forma automática al variar el tamaño de la imagen.</p>
+			<p><abbr title="Graphics Interchange Format">GIF</abbr> es un formato de tamaño de archivo también reducido y que casi no pierde calidad en el reescalado, pero admite sólo 256 colores. Es muy usado para crear animaciones.</p>
+		</article>
+
+		<article class="ppal">
+			<div class="autoria">
+				<div class="aFoto"><a href="/fotos.html"><img src="/flechaAzul.5e90caf7.svg" alt=""></a><p>Ir a reconocimiento de fotos</p></div>
+				<div class="aArriba"><a href="#"><img src="/flechaVerde.17725521.svg" alt=""></a><p>Subir</p></div>
+			</div>
+		</article>
+
+
+		<footer>
+			<div class="conFooter">
+				<div class="area1"><img src="/logoD.6fe1ad83.svg" alt="Logo"></div>
+				<div class="area2"><p><span class="cmH1">Desarrollo Front-end para Dummies </span> - <span class="cmH2"> Parte II</span></p><br><p>Póximamente la Parte III</p></div>
+				<div class="area3"></div>
+				<div class="area4"><p>&#169; Víctor Avila. Trabajo para la asignatura "Herramientas <abbr title="HyperText Markup Language" lang="en">HTML</abbr> y <abbr title="Cascading Style Sheets" lang="en">CSS.</abbr> I" del Máster <em><a class="enlaceBlanco" href="https://estudios.uoc.edu/es/masters-universitarios/desarrollo-sitios-aplicaciones-web/presentacion" target="_blank">Desarrollo de sitios y aplicaciones web</a></em> de la <abbr title="Universidad Oberta de Catalunya">UOC</abbr></p></div>
+				
+			</div>
+		</footer>
+	</main>
+	
+</body>
+</html>

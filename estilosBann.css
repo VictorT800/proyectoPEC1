@@ -1,0 +1,137 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+.bann{
+	border: 8px solid #468987;
+	background: #28cfca;
+	width: 240px;
+	height: 240px;
+	border-radius: 50%;
+	animation: 2s parteDos infinite;
+	position: absolute;
+	box-shadow: 2px 2px 5px red;
+}
+.bann a{
+	text-decoration: none;
+}
+
+.bannGeneral{
+	font-size: 16px;
+	text-align: center;
+	padding-top: 40px;
+	color: #cf0000;
+	text-indent: 0px;
+}
+
+
+.bannP{
+	transform: rotate(-20deg);
+	font-size: 45px;
+	text-align: center;
+	padding-top: 40px;
+	font-family: 'Permanent Marker', cursive;
+	color: #cf0000;
+	text-indent: 0px;
+}
+
+
+@keyframes parteDos{
+	30%{
+		/*opacity: 0;*/
+		transform: scale(0.8);
+	}
+	50%{
+		/*opacity: 0;*/
+		transform: scale(1.2);
+	}
+	80%{
+		/*opacity: 0;*/
+		transform: scale(0.7);
+	}
+}
+
+@media (max-width: 1400px){
+	.bann{
+	width: 180px;
+	height: 180px;
+	}
+
+	.bannP{
+	transform: rotate(-20deg);
+	font-size: 32px;
+	padding-top: 8px;
+	}
+
+	@keyframes parteDos{
+		30%{
+			/*opacity: 0;*/
+			transform: scale(0.8);
+		}
+		50%{
+			/*opacity: 0;*/
+			transform: scale(1.1);
+		}
+		80%{
+			/*opacity: 0;*/
+			transform: scale(0.7);
+		}
+	}
+}
+
+@media (max-width: 1000px){
+	.bann{
+	width: 100px;
+	height: 100px;
+	margin-top: 70px;
+	}
+
+	.bannP{
+	transform: rotate(-20deg);
+	font-size: 14px;
+	padding-top: 0px;
+	}
+
+	@keyframes parteDos{
+		30%{
+			/*opacity: 0;*/
+			transform: scale(0.8);
+		}
+		50%{
+			/*opacity: 0;*/
+			transform: scale(1.1);
+		}
+		80%{
+			/*opacity: 0;*/
+			transform: scale(0.7);
+		}
+	}
+
+
+	.bannGeneral{
+		font-size: 8px;
+		padding-top: 0px;
+	}
+
+	.bann > p{
+		margin-top: -5px;
+	}
+
+}
+
+@media (max-width: 690px){
+	.bann{
+	width: 85px;
+	height: 85px;
+	margin-top: 10px;
+	position: relative;
+	display: inline-block;
+	}
+
+	.bannP{
+	transform: rotate(-20deg);
+	font-size: 12px;
+	margin-top: -8px;
+	}
+}
